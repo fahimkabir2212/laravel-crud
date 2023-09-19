@@ -47,4 +47,10 @@ class PatientController extends Controller
     return redirect('/');
 
     }
+    public function deletePatient(Request $request){
+        $id = $request -> id;
+        $data = Patient::where('id',$id)->first();
+        $data->delete();
+        return redirect()->back();
+    }
 }

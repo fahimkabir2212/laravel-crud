@@ -33,9 +33,9 @@
                         <td>{{$patient['dob']}}</td>
                         <td>{{$patient['gender']}}</td>
                         <td>{{$patient['patient_type']}}</td>
-                        <td><a href="{{}}">View</a></td>
+                        <td><a href="">View</a></td>
                         <td> <a href="">Edit</a> </td>
-                        <td><a href="">Delete</a></td>
+                        <td><a href="/delete-patient/{{$patient['id']}}">Delete</a></td>
                         
                     </tr>
                 @endforeach
