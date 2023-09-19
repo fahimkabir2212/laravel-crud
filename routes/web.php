@@ -1,14 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\HMS\PatientController;
+use App\Http\Controllers\HMS\PatientController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/view-patient',[PatientController::class,'viewPatient'])->name('view.patient');
+Route::get('/',[PatientController::class,'viewPatient'])->name('view.patient');
 Route::get('/create-patient',[PatientController::class,'createPatient'])->name('create.patient');
 Route::get('/store-patient',[PatientController::class,'storePatient'])->name('store.patient');
 Route::get('/show-patient/{id}',[PatientController::class,'showPatient'])->name('show.patient');

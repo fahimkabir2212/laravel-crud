@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Patient extends Model
 {
-    protected $table = 'student';
+    protected $table = 'patient';
 
     const CREATED_AT = 'cd';
     const UPDATED_AT ='ud';

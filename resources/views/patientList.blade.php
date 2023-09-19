@@ -11,36 +11,34 @@
     <div class="container">
         <div class="page-heading">
             <h1>Patient Management System</h1>
-            <a href="">Create New</a>
+            <a href="{{route('create.patient')}}">Create New</a>
         </div>
         <div class="data-table">
             <table>
-                {{-- Patient Details
-                    1. name
-                    2. email
-                    3. phone
-                    4. address
-                    5. dob
-                    6. gender (radio)
-                    7. patienttype (dropdown) --}}
                 <tr>
+                    <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Phone</th>
-                    <th>Address</th>
                     <th>Date of Birth</th>
                     <th>Gender</th>
                     <th>Patient Type</th>
                 </tr>
-                <tr>
-                    <td>Name</td>
-                    <td>Email</td>
-                    <td>Phone</td>
-                    <td>Address</td>
-                    <td>Date of Birth</td>
-                    <td>Gender</td>
-                    <td>Patient Type</td>
-                </tr>
+                @foreach ($patients as $patient)
+                    <tr>
+                        <td>{{$patient['id']}}</td>
+                        <td>{{$patient['name']}}</td>
+                        <td>{{$patient['email']}}</td>
+                        <td>{{$patient['phone']}}</td>
+                        <td>{{$patient['dob']}}</td>
+                        <td>{{$patient['gender']}}</td>
+                        <td>{{$patient['patient_type']}}</td>
+                        <td><a href="{{}}">View</a></td>
+                        <td> <a href="">Edit</a> </td>
+                        <td><a href="">Delete</a></td>
+                        
+                    </tr>
+                @endforeach
             </table>
         </div>
     </div>
