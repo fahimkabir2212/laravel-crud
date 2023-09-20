@@ -10,12 +10,16 @@
 <body>
     <div class="container">
         <div class="page-heading">
-            <h1>Patient Management System</h1>
-            <a href="{{route('create.patient')}}">Create New</a>
+            <div class="wrapper">
+                <div class="header-el">
+                    <h1>Patient Management System</h1>
+                    <a href="{{route('create.patient')}}" class="primary-btn">Create New</a>
+                </div>
+            </div>
         </div>
-        <div class="data-table">
+        <div class="data-table wrapper">
             <table>
-                <tr>
+                <tr class="table-head">
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
@@ -23,6 +27,7 @@
                     <th>Date of Birth</th>
                     <th>Gender</th>
                     <th>Patient Type</th>
+                    <th>Action</th>
                 </tr>
                 @foreach ($patients as $patient)
                     <tr>
@@ -33,8 +38,10 @@
                         <td>{{$patient['dob']}}</td>
                         <td>{{$patient['gender']}}</td>
                         <td>{{$patient['patient_type']}}</td>
-                        <td> <a href="/show-patient/{{$patient['id']}}">Edit</a> </td>
-                        <td><a href="/delete-patient/{{$patient['id']}}">Delete</a></td>
+                        <td> 
+                            <a href="/show-patient/{{$patient['id']}}">Edit</a>
+                            <a class="d-btn" href="/delete-patient/{{$patient['id']}}">Delete</a>
+                        </td>
                         
                     </tr>
                 @endforeach

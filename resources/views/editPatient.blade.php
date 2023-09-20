@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
 </head>
 <body>
-    <div class="page-heading">
+    <div class="header-el page-heading">
         <h1>Patient Management System</h1>
-        <a href="{{route('view.patient')}}">Back</a>
+        <a class="primary-btn" href="{{route('view.patient')}}">Back</a>
     </div>
     <form action="{{route('edit.patient')}}" method="POST">
         {{@csrf_field()}}
@@ -35,10 +36,16 @@
         <input type="date" name="dob" id="dateOfBirth" value="{{$data['dob']}}">
         
         <label for="">Gender </label>
-        <input type="radio" id="gender" name="gender" value="Male" {{($data['gender'] == 'Male') ? 'checked' : ''}}>
+        <div class="radd">
+            <div class="rad">
+                <input type="radio" id="gender" name="gender" value="Male" {{($data['gender'] == 'Male') ? 'checked' : ''}}>
         <label for="gender">Male</label><br>
-        <input type="radio" id="gender" name="gender"  value="Female" {{($data['gender'] == 'Female') ? 'checked' : ''}}>
+            </div>
+        <div class="rad">
+            <input type="radio" id="gender" name="gender"  value="Female" {{($data['gender'] == 'Female') ? 'checked' : ''}}>
         <label for="gender">Female</label><br>
+        </div>
+        </div>
 
         <label for="">Patient Type</label>
         <select name="patient_type" id="patientType">
@@ -46,7 +53,7 @@
             <option value="genaral" {{($data['patient_type'] == 'genaral')? 'selected':''}}>Genaral</option>
         </select>
 
-        <button>Update</button>
+        <button class="primary-btn">Update</button>
     </form>
 </body>
 </html>

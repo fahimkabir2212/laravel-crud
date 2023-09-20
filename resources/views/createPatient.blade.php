@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
 </head>
 <body>
     <div class="page-heading">
-        <h1>Patient Management System</h1>
-        <a href="{{route('view.patient')}}">Back</a>
+        
+            <div class="header-el wrapper">
+                <h1>Patient Management System</h1>
+                <a class="primary-btn" href="{{route('view.patient')}}">Back</a>
+            </div>
     </div>
     <form action="{{route('store.patient')}}" method="POST">
         {{@csrf_field()}}
@@ -32,21 +36,26 @@
         <label for="">DOB</label>
         <input type="date" name="dob" id="dateOfBirth">
         
-        <label for="">Gender </label>
-        <input type="radio" id="gender" name="gender" value="Male">
-        <label for="gender">Male</label><br>
-        <input type="radio" id="gender" name="gender" value="Female">
-        <label for="gender">Female</label><br>
+        
+            <label for="">Gender </label>
+        <div class="radd">
+        <div class="rad">
+            <input type="radio" id="gender" name="gender" value="Male">
+            <label for="gender">Male</label><br>
+        </div>
+        <div class="rad">
+            <input type="radio" id="gender" name="gender" value="Female">
+            <label for="gender">Female</label><br>
+        </div>
+        </div>
 
         <label for="">Patient Type</label>
         <select name="patient_type" id="patientType">
-            <option value="java" selected>Java</option>
-            <option value="javascript">JavaScript</option>
-            <option value="python">Python</option>
-            <option value="c++">C++</option>
+            <option value="coorporate" selected>Corporate</option>
+            <option value="general">Genaral</option>
         </select>
 
-        <button>Add Patient</button>
+        <button class="primary-btn">Add Patient</button>
     </form>
 </body>
 </html>
